@@ -1,1 +1,1 @@
-LLMs have played a significant role in advancing the field of NLP
+Machine Learning is a technology that uses data and algorithms to enable computer systems to learn and improve automatically

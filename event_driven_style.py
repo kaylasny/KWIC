@@ -13,7 +13,7 @@ filename = "input.txt"
 # 事件处理器：读取输入文件内容
 
 
-def handle_read_input():
+def read_input():
     with open(filename, 'r') as file:
         shared_data["input"] = file.readlines()
     print("Input file read.")
@@ -22,7 +22,7 @@ def handle_read_input():
 
 
 # 事件处理器：生成循环移位
-def handle_generate_shifts():
+def generate_shifts():
     shifts = []
     for line in shared_data["input"]:
         words = line.split()
@@ -35,7 +35,7 @@ def handle_generate_shifts():
 
 
 # 事件处理器：对循环移位进行排序
-def handle_sort_shifts():
+def sort_shifts():
     shared_data["sorted"] = sorted(shared_data["shifts"])
     print("Shifts sorted.")
     # 触发输出结果的事件
@@ -43,7 +43,7 @@ def handle_sort_shifts():
 
 
 # 事件处理器：输出排序结果
-def handle_output_result():
+def output_result():
     for shift in shared_data["sorted"]:
         print(shift)
     print("Output completed.")
@@ -60,10 +60,10 @@ def main():
 
         # 使用字典模拟 switch-case
         event_handlers = {
-            "read_input": handle_read_input,
-            "generate_shifts": handle_generate_shifts,
-            "sort_shifts": handle_sort_shifts,
-            "output_result": handle_output_result
+            "read_input": read_input,
+            "generate_shifts": generate_shifts,
+            "sort_shifts": sort_shifts,
+            "output_result": output_result
         }
 
         # 获取对应的事件处理函数并调用
